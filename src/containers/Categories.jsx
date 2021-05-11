@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchCategories from '../actions';
+import { fetchCategories } from '../actions';
 import Card from '../components/Card';
 
 const Categories = () => {
