@@ -1,15 +1,10 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import fetchCategories from './actions';
+import { ChakraProvider } from '@chakra-ui/react';
+import Routes from './routes/Routes';
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCategories());
-  }, [dispatch]);
-
-  return <h1>hello!</h1>;
-};
+const App = () => (
+  <ChakraProvider resetCSS>
+    <Routes />
+  </ChakraProvider>
+);
 
 export default App;
