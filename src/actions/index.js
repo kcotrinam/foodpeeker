@@ -5,6 +5,9 @@ import {
   FETCH_COUNTRIES_FAILURE,
   FETCH_COUNTRIES_REQUEST,
   FETCH_COUNTRIES_SUCCESS,
+  FETCH_MEALLIST_FAILURE,
+  FETCH_MEALLIST_REQUEST,
+  FETCH_MEALLIST_SUCCESS,
 } from './actionTypes';
 
 export const fetchCategories = () => async (dispatch) => {
@@ -30,5 +33,18 @@ export const fetchCountries = () => async (dispatch) => {
     dispatch({ type: FETCH_COUNTRIES_SUCCESS, payload: json.meals });
   } catch (error) {
     dispatch({ type: FETCH_COUNTRIES_FAILURE, payload: error });
+  }
+};
+
+export const fetchMealList = (path) => async (dispatch) => {
+  dispatch({ type: FETCH_MEALLIST_REQUEST });
+
+  try {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?${path}`);
+    const json = await response.json();
+
+    dispatch({ type: FETCH_MEALLIST_SUCCESS, payload: json.meals });
+  } catch (error) {
+    dispatch({ type: FETCH_MEALLIST_FAILURE, payload: error });
   }
 };
