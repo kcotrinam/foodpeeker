@@ -5,7 +5,9 @@ import {
 } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
-  info: [],
+  info: {},
+  ingredients: [],
+  meassurements: [],
   loading: false,
   error: null,
 };
@@ -21,7 +23,9 @@ const recipeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
-        info: action.payload,
+        info: action.payload.details,
+        ingredients: [...action.payload.ingredients],
+        meassurements: action.payload.measurements,
       };
     case FETCH_RECIPE_FAILURE:
       return {
