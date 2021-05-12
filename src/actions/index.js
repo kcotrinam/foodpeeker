@@ -8,6 +8,9 @@ import {
   FETCH_MEALLIST_FAILURE,
   FETCH_MEALLIST_REQUEST,
   FETCH_MEALLIST_SUCCESS,
+  FETCH_RECIPE_FAILURE,
+  FETCH_RECIPE_REQUEST,
+  FETCH_RECIPE_SUCCESS,
 } from './actionTypes';
 
 export const fetchCategories = () => async (dispatch) => {
@@ -46,5 +49,20 @@ export const fetchMealList = (path) => async (dispatch) => {
     dispatch({ type: FETCH_MEALLIST_SUCCESS, payload: json.meals });
   } catch (error) {
     dispatch({ type: FETCH_MEALLIST_FAILURE, payload: error });
+  }
+};
+
+// Recipe request action
+
+export const fetchRecipe = (id) => async (dispatch) => {
+  dispatch({ type: FETCH_RECIPE_REQUEST });
+
+  try {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const json = await response.json();
+
+    dispatch({ type: FETCH_RECIPE_SUCCESS, payload: json.meals });
+  } catch (error) {
+    dispatch({ type: FETCH_RECIPE_FAILURE, payload: error });
   }
 };
