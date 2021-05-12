@@ -1,6 +1,7 @@
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchCategories } from '../actions';
 import Card from '../components/Card';
 
@@ -17,12 +18,19 @@ const Categories = () => {
     if (error) return <h1>Error.</h1>;
 
     return categories.map((category) => (
-      <Card
-        key={category.idCategory}
-        name={category.strCategory}
-        img={category.strCategoryThumb}
-        imgAlt={category.strCategoryDescription}
-      />
+      <Box w={{ base: '50%', md: '33.333%' }} key={category.idCategory}>
+        <Link
+          to={`/categories/c=${category.strCategory}`}
+          name={category.strCategory}
+          key={category.idCategory}
+        >
+          <Card
+            name={category.strCategory}
+            img={category.strCategoryThumb}
+            imgAlt={category.strCategoryDescription}
+          />
+        </Link>
+      </Box>
     ));
   };
 
