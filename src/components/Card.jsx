@@ -4,7 +4,7 @@ import { Box, Image, Text } from '@chakra-ui/react';
 
 const Card = ({ name, img, imgAlt }) => (
   <>
-    <Box w={{ base: '50%', md: '33.333%' }} position="relative">
+    <Box w="100%" position="relative">
       <Box>
         <Image src={img} alt={imgAlt} />
       </Box>
