@@ -1,3 +1,4 @@
+import splitInfo from '../utils/splitInfo';
 import {
   FETCH_CATEGORIES_FAILURE,
   FETCH_CATEGORIES_REQUEST,
@@ -61,7 +62,10 @@ export const fetchRecipe = (id) => async (dispatch) => {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     const json = await response.json();
 
-    dispatch({ type: FETCH_RECIPE_SUCCESS, payload: json.meals });
+    const { details, ingredients, measurements } = splitInfo(json.meals);
+    // console.log(ingredients);
+
+    dispatch({ type: FETCH_RECIPE_SUCCESS, payload: { details, ingredients, measurements } });
   } catch (error) {
     dispatch({ type: FETCH_RECIPE_FAILURE, payload: error });
   }
