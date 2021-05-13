@@ -35,8 +35,8 @@ function RecipeCard({
     ));
 
   return (
-    <Container>
-      <Box maxW="container.xl">
+    <Container backgroundColor="#fff" borderTopRadius="lg">
+      <Box maxW="container.xl" shadow="xl" p={2}>
         <Box>
           <Stack spacing="4" p={2}>
             <Center>

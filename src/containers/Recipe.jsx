@@ -1,5 +1,6 @@
 /* eslint-disable  implicit-arrow-linebreak */
 /* eslint-disable object-curly-newline */
+import { Box } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -20,16 +21,18 @@ function Recipe() {
     if (error) return <h1>Error...</h1>;
 
     return (
-      <RecipeCard
-        title={info.strMeal}
-        img={info.strMealThumb}
-        description={info.strInstructions}
-        category={info.strCategory}
-        area={info.strArea}
-        ingredients={ingredients}
-        meassurements={meassurements}
-        source={info.strSource}
-      />
+      <Box as="div" width="100%" backgroundColor="gray.100" p={4}>
+        <RecipeCard
+          title={info.strMeal}
+          img={info.strMealThumb}
+          description={info.strInstructions}
+          category={info.strCategory}
+          area={info.strArea}
+          ingredients={ingredients}
+          meassurements={meassurements}
+          source={info.strSource}
+        />
+      </Box>
     );
   };
 
