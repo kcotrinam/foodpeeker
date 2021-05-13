@@ -1,14 +1,16 @@
-import { Box, ListItem } from '@chakra-ui/react';
+/* eslint-disable  object-curly-newline */
+/* eslint-disable  implicit-arrow-linebreak */
+import { Box, Grid, ListItem, Text } from '@chakra-ui/react';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 function IngredientItem({ ingredient, meassurement }) {
   return (
     <ListItem>
-      {`${ingredient}: `}
-      <Box as="span" m={6}>
-        {meassurement}
-      </Box>
+      <Grid templateColumns="0.5fr 0.5fr">
+        <Text>{`${ingredient}: `}</Text>
+        <Box>{meassurement}</Box>
+      </Grid>
     </ListItem>
   );
 }
