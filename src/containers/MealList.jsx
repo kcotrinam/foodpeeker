@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { Box, Grid } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -19,11 +20,25 @@ const MealList = () => {
     if (error) return <h1>Error...</h1>;
 
     return meals.map((meal) => (
-      <MealCard key={meal.idMeal} image={meal.strMealThumb} name={meal.strMeal} id={meal.idMeal} />
+      <MealCard
+        key={Math.random()}
+        image={meal.strMealThumb}
+        name={meal.strMeal}
+        id={meal.idMeal}
+      />
     ));
   };
 
-  return <div>{renderMeals()}</div>;
+  return (
+    <Box width={{ md: '80vw' }} mx="auto">
+      <Grid
+        templateColumns={{ base: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(4,1fr)' }}
+        gap={3}
+      >
+        {renderMeals()}
+      </Grid>
+    </Box>
+  );
 };
 
 export default MealList;

@@ -29,9 +29,6 @@ function MealCard({ image, name, id }) {
               <StarIcon key={i} color={i < property.rating ? 'teal.500' : 'gray.300'} />
             ))}
           <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
-          </Box>
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
             <Link to={`/${id}`} id={id}>
               Read Recipe
             </Link>
@@ -45,7 +42,7 @@ function MealCard({ image, name, id }) {
 MealCard.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.string,
 };
 
 export default MealCard;
