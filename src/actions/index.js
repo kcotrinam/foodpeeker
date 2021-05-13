@@ -63,7 +63,6 @@ export const fetchRecipe = (id) => async (dispatch) => {
     const json = await response.json();
 
     const { details, ingredients, measurements } = splitInfo(json.meals);
-    // console.log(ingredients);
 
     dispatch({ type: FETCH_RECIPE_SUCCESS, payload: { details, ingredients, measurements } });
   } catch (error) {

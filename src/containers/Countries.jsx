@@ -21,8 +21,8 @@ const Countries = () => {
     if (error) return <h1>Error.</h1>;
 
     return countries.map((country) => (
-      <Box w={{ base: '50%', md: '33.333%' }} key={country.srtArea}>
-        <Link to={`/countries/a=${country.strArea}`} id={country.strArea}>
+      <Box w={{ base: '50%', md: '33.333%' }} key={Math.random()}>
+        <Link to={`/countries/a=${country.strArea}`}>
           <Card
             key={country.strArea}
             name={country.strArea}
