@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable implicit-arrow-linebreak */
 import { Box, Grid } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

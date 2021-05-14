@@ -1,4 +1,3 @@
-/* eslint-disable  object-curly-newline */
 /* eslint-disable  implicit-arrow-linebreak */
 import {
   Badge,

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-/* eslint-disable  react/require-default-props */
 import { Box, Image, Text } from '@chakra-ui/react';
 
 const Card = ({ name, img, imgAlt }) => (
@@ -16,6 +15,13 @@ const Card = ({ name, img, imgAlt }) => (
     </Box>
   </>
 );
+
+Card.defaultProps = {
+  name: '',
+  img: '',
+  imgAlt: '',
+};
+
 Card.propTypes = {
   name: PropTypes.string,
   img: PropTypes.string,

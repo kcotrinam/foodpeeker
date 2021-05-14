@@ -1,6 +1,3 @@
-/* eslint-disable  react/jsx-one-expression-per-line */
-/* eslint-disable  react/no-array-index-key */
-/* eslint-disable  react/require-default-props */
 import { StarIcon } from '@chakra-ui/icons';
 import { Box, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
@@ -26,7 +23,7 @@ function MealCard({ image, name, id }) {
           {Array(5)
             .fill('')
             .map((_, i) => (
-              <StarIcon key={i} color={i < property.rating ? 'teal.500' : 'gray.300'} />
+              <StarIcon key={Math.random()} color={i < property.rating ? 'teal.500' : 'gray.300'} />
             ))}
           <Box as="span" ml="2" color="gray.600" fontSize="sm">
             <Link to={`/${id}`} id={id}>
@@ -38,6 +35,12 @@ function MealCard({ image, name, id }) {
     </Box>
   );
 }
+
+MealCard.defaultProps = {
+  image: '',
+  name: '',
+  id: '',
+};
 
 MealCard.propTypes = {
   image: PropTypes.string,

@@ -1,4 +1,3 @@
-/* eslint-disable  implicit-arrow-linebreak */
 /* eslint-disable object-curly-newline */
 import { Box } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
