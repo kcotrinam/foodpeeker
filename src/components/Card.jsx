@@ -2,11 +2,19 @@ import PropTypes from 'prop-types';
 import { Box, Image, Text } from '@chakra-ui/react';
 
 const Card = ({ name, img, imgAlt }) => (
-  <Box w="100%" position="relative">
+  <Box w="100%" position="relative" bg="#fff" boxShadow="xl">
     <Box>
       <Image src={img} alt={imgAlt} w="100%" />
     </Box>
-    <Box position="absolute" top="0" left="0" width="100%" height="100%" bg="rgba(0,0,0,0.5)" />
+    <Box
+      position="absolute"
+      top="0"
+      left="0"
+      width="100%"
+      height="100%"
+      bg="rgba(0,0,0,0.5)"
+      borderRadius={4}
+    />
     <Box minH="50%" position="absolute" bottom="0" right="15%">
       <Text textAlign="right" fontSize="lg" fontWeight="bold" color="gray.50">
         {name}

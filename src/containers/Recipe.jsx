@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchRecipe } from '../actions';
 import RecipeCard from '../components/RecipeCard';
+import Loader from '../components/shared/Loader';
 
 function Recipe() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ function Recipe() {
   }, [dispatch]);
 
   const renderRecipe = () => {
-    if (loading) return <h1>Loading...</h1>;
+    if (loading) return <Loader />;
     if (error) return <h1>Error...</h1>;
 
     return (

@@ -1,10 +1,11 @@
-import { Box, Grid } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchCountries } from '../actions';
 import Default from '../assets/images/maps/Default.png';
 import Card from '../components/Card';
+import Loader from '../components/shared/Loader';
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,13 @@ const Countries = () => {
   }, [dispatch]);
 
   const renderCountries = () => {
-    if (loading) return <h1>Loading...</h1>;
+    if (loading) {
+      return (
+        <GridItem colSpan={4}>
+          <Loader />
+        </GridItem>
+      );
+    }
     if (error) return <h1>Error.</h1>;
 
     return countries.map((country) => (
@@ -33,12 +40,14 @@ const Countries = () => {
   };
 
   return (
-    <Box as="div" w="100%" bg="#2B6CB0">
+    <Box as="div" w="100%" bg="gray.200">
       <Grid
         templateColumns={{ base: 'repeat(2,1fr)', md: 'repeat(3,1fr)', lg: 'repeat(4,1fr)' }}
         w={{ md: '80vw' }}
         gap={3}
         mx="auto"
+        minWidth="80vw"
+        minHeight="100vh"
       >
         {renderCountries()}
       </Grid>
