@@ -6,7 +6,7 @@ const Card = ({ name, img, imgAlt }) => (
   <>
     <Box w="100%" position="relative">
       <Box>
-        <Image src={img} alt={imgAlt} />
+        <Image src={img} alt={imgAlt} w="100%" />
       </Box>
       <Box minH="50%" position="absolute" bottom="0" right="15%">
         <Text textAlign="right" fontSize="lg" fontWeight="bold" color="gray.50">

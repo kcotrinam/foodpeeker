@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Grid } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Categories = () => {
     if (error) return <h1>Error.</h1>;
 
     return categories.map((category) => (
-      <Box w={{ base: '50%', md: '33.333%' }} key={category.idCategory}>
+      <Box key={category.idCategory}>
         <Link
           to={`/categories/c=${category.strCategory}`}
           name={category.strCategory}
@@ -35,9 +35,14 @@ const Categories = () => {
   };
 
   return (
-    <Flex wrap="wrap" display="flex" w="100%">
+    <Grid
+      templateColumns={{ base: 'repeat(2,1fr)', md: 'repeat(3,1fr)', lg: 'repeat(4,1fr)' }}
+      w={{ md: '80vw' }}
+      gap={3}
+      mx="auto"
+    >
       {renderCategories()}
-    </Flex>
+    </Grid>
   );
 };
 
