@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { fetchCountries } from '../actions';
 import Default from '../assets/images/maps/Default.png';
 import Card from '../components/Card';
+import FilterInput from '../components/FilterInput';
 import Loader from '../components/shared/Loader';
 
 const Countries = () => {
@@ -52,6 +53,7 @@ const Countries = () => {
 
   return (
     <Box as="div" w="100%" bg="gray.200" p={2}>
+      <FilterInput />
       <Grid
         templateColumns={{
           base: 'repeat(2,1fr)',

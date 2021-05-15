@@ -6,11 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchCategories } from '../actions';
 import Card from '../components/Card';
+import FilterInput from '../components/FilterInput';
 import Loader from '../components/shared/Loader';
 
 const Categories = () => {
   const dispatch = useDispatch();
-  const { categories, loading, error } = useSelector((state) => state.categories);
+  const { categories, loading, error } = useSelector(
+    (state) => state.categories,
+  );
   const textFilter = useSelector((state) => state.wordFilter);
 
   useEffect(() => {
@@ -56,8 +59,13 @@ const Categories = () => {
 
   return (
     <Box as="div" w="100%" bg="gray.200" p={3} minH="100vh">
+      <FilterInput />
       <Grid
-        templateColumns={{ base: 'repeat(2,1fr)', md: 'repeat(3,1fr)', lg: 'repeat(4,1fr)' }}
+        templateColumns={{
+          base: 'repeat(2,1fr)',
+          md: 'repeat(3,1fr)',
+          lg: 'repeat(4,1fr)',
+        }}
         w={{ md: '80vw' }}
         gap={3}
         mx="auto"

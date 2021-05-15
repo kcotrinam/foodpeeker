@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchMealList } from '../actions';
+import FilterInput from '../components/FilterInput';
 import MealCard from '../components/MealCard';
 
 const MealList = () => {
@@ -42,6 +43,7 @@ const MealList = () => {
 
   return (
     <Box width={{ md: '80vw' }} mx="auto">
+      <FilterInput />
       <Grid
         templateColumns={{
           base: '1fr 1fr',
