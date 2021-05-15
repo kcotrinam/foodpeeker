@@ -40,9 +40,13 @@ const Countries = () => {
   };
 
   return (
-    <Box as="div" w="100%" bg="gray.200">
+    <Box as="div" w="100%" bg="gray.200" p={2}>
       <Grid
-        templateColumns={{ base: 'repeat(2,1fr)', md: 'repeat(3,1fr)', lg: 'repeat(4,1fr)' }}
+        templateColumns={{
+          base: 'repeat(2,1fr)',
+          md: 'repeat(3,1fr)',
+          lg: 'repeat(4,1fr)',
+        }}
         w={{ md: '80vw' }}
         gap={3}
         mx="auto"
