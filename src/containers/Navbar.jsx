@@ -20,7 +20,7 @@ const Navbar = () => (
               fontWeight="bold"
               color="gray.300"
             >
-              FOODKEEPER
+              FOODPEEKER
             </Text>
           </Center>
         </Link>
