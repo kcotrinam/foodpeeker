@@ -8,7 +8,7 @@
 
 ## :red_circle: Live Demo:
 
-[Live Demo Link]()
+[Live Demo Link](https://food-peeker.netlify.app/)
 
 ## :hammer: Built with
 
