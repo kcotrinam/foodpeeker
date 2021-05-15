@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { CloseIcon, SearchIcon } from '@chakra-ui/icons';
 import { Box, Input, ScaleFade } from '@chakra-ui/react';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterAction } from '../actions';
 
@@ -13,6 +13,17 @@ function FilterInput() {
   const handleChange = ({ target }) => {
     dispatch(filterAction(target.value));
   };
+
+  useEffect(() => {
+    const closeFilter = (e) => {
+      if (e.keyCode === 27) {
+        setFilter((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', closeFilter);
+
+    return () => window.removeEventListener('keydown', closeFilter);
+  });
 
   const handleClick = () => {
     setFilter((prev) => !prev);
