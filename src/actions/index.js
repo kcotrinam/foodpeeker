@@ -12,6 +12,7 @@ import {
   FETCH_RECIPE_FAILURE,
   FETCH_RECIPE_REQUEST,
   FETCH_RECIPE_SUCCESS,
+  FILTER_BY_NAME,
 } from './actionTypes';
 
 export const fetchCategories = () => async (dispatch) => {
@@ -69,3 +70,8 @@ export const fetchRecipe = (id) => async (dispatch) => {
     dispatch({ type: FETCH_RECIPE_FAILURE, payload: error });
   }
 };
+
+export const filterAction = (word) => ({
+  type: FILTER_BY_NAME,
+  payload: word,
+});
