@@ -1,5 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
+import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import Navbar from '../containers/Navbar';
 
@@ -7,7 +8,7 @@ describe('<Navbar />', () => {
   let component;
 
   beforeEach(() => {
-    component = render(<Navbar />);
+    component = render(<MemoryRouter><Navbar /></MemoryRouter>);
   });
 
   test('It should render', () => {
