@@ -1,4 +1,5 @@
 /* eslint-disable object-curly-newline */
+/* eslint-disable  */
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,10 +11,20 @@ import Loader from '../components/shared/Loader';
 const Categories = () => {
   const dispatch = useDispatch();
   const { categories, loading, error } = useSelector((state) => state.categories);
+  const textFilter = useSelector((state) => state.wordFilter);
 
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  const filteredCategories = () => {
+    if (textFilter) {
+      return categories.filter((cat) =>
+        cat.strCategory.toLowerCase().includes(textFilter.toLowerCase()),
+      );
+    }
+    return categories;
+  };
 
   const renderCategories = () => {
     if (loading) {
@@ -25,7 +36,7 @@ const Categories = () => {
     }
     if (error) return <h1>Error.</h1>;
 
-    return categories.map((category) => (
+    return filteredCategories().map((category) => (
       <Box key={category.idCategory} borderRadius="md">
         <Link
           to={`/categories/c=${category.strCategory}`}
