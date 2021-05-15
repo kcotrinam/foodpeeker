@@ -2,7 +2,7 @@
 
 # Mounsters Hunter
 
-> This is an web application where the user will be able to find different recipes of food around the world. The use can select by countries or categories. Besides, The use can filter the meal based on the name.
+> This is a web application where the user will be able to find different recipes of food around the world. The user can select by country or category. Besides, The user can filter the meal based on the name.
 
 ![screenshot](./docs/screenshot.png)
 
