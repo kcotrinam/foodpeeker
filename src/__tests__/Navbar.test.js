@@ -1,11 +1,10 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Navbar from '../containers/Navbar';
 
 describe('<Navbar />', () => {
   let component;
-  const mockHandler = jest.fn();
 
   beforeEach(() => {
     component = render(<Navbar />);
