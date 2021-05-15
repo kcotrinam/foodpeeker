@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import { Box } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +9,11 @@ import Loader from '../components/shared/Loader';
 function Recipe() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { info, meassurements, ingredients, loading, error } = useSelector((state) => state.recipe);
+  const {
+    info, meassurements, ingredients, loading, error,
+  } = useSelector(
+    (state) => state.recipe,
+  );
 
   useEffect(() => {
     dispatch(fetchRecipe(id));

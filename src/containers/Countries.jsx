@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,9 +19,8 @@ const Countries = () => {
 
   const filteredCountries = () => {
     if (textFilter) {
-      return countries.filter((count) =>
-        count.strArea.toLowerCase().includes(textFilter.toLowerCase()),
-      );
+      return countries.filter((count) => count.strArea
+        .toLowerCase().includes(textFilter.toLowerCase()));
     }
     return countries;
   };

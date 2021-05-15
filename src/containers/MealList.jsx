@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,9 +19,7 @@ const MealList = () => {
 
   const filteredMeals = () => {
     if (textFilter) {
-      return meals.filter((meal) =>
-        meal.strMeal.toLowerCase().includes(textFilter.toLowerCase()),
-      );
+      return meals.filter((meal) => meal.strMeal.toLowerCase().includes(textFilter.toLowerCase()));
     }
     return meals;
   };

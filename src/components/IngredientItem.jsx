@@ -1,5 +1,6 @@
-/* eslint-disable  object-curly-newline */
-import { Box, Grid, ListItem, Text } from '@chakra-ui/react';
+import {
+  Box, Grid, ListItem, Text,
+} from '@chakra-ui/react';
 import React from 'react';
 import PropTypes from 'prop-types';
 

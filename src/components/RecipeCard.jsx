@@ -1,4 +1,3 @@
-/* eslint-disable  implicit-arrow-linebreak */
 import {
   Badge,
   Box,
@@ -24,14 +23,13 @@ function RecipeCard({
   meassurements,
   source,
 }) {
-  const renderingredientItems = () =>
-    ingredients.map((ingredient, idx) => (
-      <IngredientItem
-        key={Math.random()}
-        ingredient={ingredient}
-        meassurement={meassurements[idx]}
-      />
-    ));
+  const renderingredientItems = () => ingredients.map((ingredient, idx) => (
+    <IngredientItem
+      key={Math.random()}
+      ingredient={ingredient}
+      meassurement={meassurements[idx]}
+    />
+  ));
 
   return (
     <Container backgroundColor="#fff" borderTopRadius="lg">

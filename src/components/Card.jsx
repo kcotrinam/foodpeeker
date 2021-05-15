@@ -1,8 +1,11 @@
-/* eslint-disable */
 import PropTypes from 'prop-types';
-import { Box, Image, ScaleFade, Text } from '@chakra-ui/react';
+import {
+  Box, Image, ScaleFade, Text,
+} from '@chakra-ui/react';
 
-const Card = ({ name, img, imgAlt, loading }) => (
+const Card = ({
+  name, img, imgAlt, loading,
+}) => (
   <ScaleFade initialScale={0.9} in={!loading}>
     <Box w="100%" position="relative" bg="#fff" boxShadow="xl">
       <Box>
@@ -30,12 +33,14 @@ Card.defaultProps = {
   name: '',
   img: '',
   imgAlt: '',
+  loading: false,
 };
 
 Card.propTypes = {
   name: PropTypes.string,
   img: PropTypes.string,
   imgAlt: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 export default Card;

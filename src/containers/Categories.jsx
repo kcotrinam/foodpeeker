@@ -1,5 +1,3 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable  */
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,9 +20,9 @@ const Categories = () => {
 
   const filteredCategories = () => {
     if (textFilter) {
-      return categories.filter((cat) =>
-        cat.strCategory.toLowerCase().includes(textFilter.toLowerCase()),
-      );
+      return categories.filter((cat) => cat.strCategory
+        .toLowerCase()
+        .includes(textFilter.toLowerCase()));
     }
     return categories;
   };

@@ -1,11 +1,14 @@
-/* eslint-disable */
 import { StarIcon } from '@chakra-ui/icons';
-import { Box, Button, Image, SlideFade } from '@chakra-ui/react';
+import {
+  Box, Button, Image, SlideFade,
+} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MealCard({ image, name, id, loading }) {
+function MealCard({
+  image, name, id, loading,
+}) {
   const property = {
     reviewCount: 34,
     rating: 4,
@@ -52,12 +55,14 @@ MealCard.defaultProps = {
   image: '',
   name: '',
   id: '',
+  loading: false,
 };
 
 MealCard.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 export default MealCard;

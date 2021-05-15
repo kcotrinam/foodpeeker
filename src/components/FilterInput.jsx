@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { CloseIcon, SearchIcon } from '@chakra-ui/icons';
 import { Box, Input, ScaleFade } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
