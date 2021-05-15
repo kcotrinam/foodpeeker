@@ -13,15 +13,17 @@ const Navbar = () => (
   <Menu>
     <Grid bg="#319795">
       <Box p={2}>
-        <Center>
-          <Text
-            fontSize={{ base: '2xl', md: '5xl' }}
-            fontWeight="bold"
-            color="gray.300"
-          >
-            FOODKEEPER
-          </Text>
-        </Center>
+        <Link to="/">
+          <Center>
+            <Text
+              fontSize={{ base: '2xl', md: '5xl' }}
+              fontWeight="bold"
+              color="gray.300"
+            >
+              FOODKEEPER
+            </Text>
+          </Center>
+        </Link>
       </Box>
       <Grid templateColumns="repeat(3, 1fr)">
         <Flex justifyContent="center" bg="#4FD1C5">

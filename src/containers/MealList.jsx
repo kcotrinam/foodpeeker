@@ -1,11 +1,12 @@
 /* eslint-disable  */
-import { Box, Grid } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchMealList } from '../actions';
 import FilterInput from '../components/FilterInput';
 import MealCard from '../components/MealCard';
+import Loader from '../components/shared/Loader';
 
 const MealList = () => {
   const { name } = useParams();
@@ -27,7 +28,13 @@ const MealList = () => {
   };
 
   const renderMeals = () => {
-    if (loading) return <h1>Loading...</h1>;
+    if (loading) {
+      return (
+        <GridItem colSpan={4}>
+          <Loader />
+        </GridItem>
+      );
+    }
     if (error) return <h1>Error...</h1>;
 
     return filteredMeals().map((meal) => (
