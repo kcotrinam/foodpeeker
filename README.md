@@ -10,6 +10,10 @@
 
 [Live Demo Link](https://food-peeker.netlify.app/)
 
+## :red_circle: video Exaplanation:
+
+[ghGisth](ttps://gist.github.com/kcotrinam/df1119250cf42f10b5046e08dc841dac)
+
 ## :hammer: Built with
 
 - React
