@@ -12,7 +12,7 @@ function MealCard({ image, name, id, loading }) {
   };
 
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" p={2}>
       <SlideFade in={!loading} offsetY="20px">
         <Image src={image} alt={property.imageAlt} />
 

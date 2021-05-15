@@ -14,7 +14,10 @@ function FilterInput() {
     dispatch(filterAction(target.value));
   };
 
-  const handleClick = () => setFilter((prev) => !prev);
+  const handleClick = () => {
+    setFilter((prev) => !prev);
+    dispatch(filterAction(''));
+  };
 
   const renderFilterInput = () => {
     if (!filter) {
@@ -23,7 +26,12 @@ function FilterInput() {
     return (
       <Box w="80vw" mx="auto" d="flex">
         <ScaleFade initialScale={0.9} in={filter}>
-          <Input ref={value} onChange={handleChange} placeholder="Type the name" size="sm" />
+          <Input
+            ref={value}
+            onChange={handleChange}
+            placeholder="Type the name"
+            size="sm"
+          />
         </ScaleFade>
         <Box pl={2}>
           <CloseIcon w={3} h={3} onClick={handleClick} />

@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import { Box, Grid } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,16 +10,26 @@ const MealList = () => {
   const { name } = useParams();
   const dispatch = useDispatch();
   const { meals, loading, error } = useSelector((state) => state.mealList);
+  const textFilter = useSelector((state) => state.wordFilter);
 
   useEffect(() => {
     dispatch(fetchMealList(name));
   }, [dispatch]);
 
+  const filteredMeals = () => {
+    if (textFilter) {
+      return meals.filter((meal) =>
+        meal.strMeal.toLowerCase().includes(textFilter.toLowerCase()),
+      );
+    }
+    return meals;
+  };
+
   const renderMeals = () => {
     if (loading) return <h1>Loading...</h1>;
     if (error) return <h1>Error...</h1>;
 
-    return meals.map((meal) => (
+    return filteredMeals().map((meal) => (
       <MealCard
         key={Math.random()}
         image={meal.strMealThumb}

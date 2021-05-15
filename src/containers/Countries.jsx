@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,10 +11,20 @@ import Loader from '../components/shared/Loader';
 const Countries = () => {
   const dispatch = useDispatch();
   const { countries, loading, error } = useSelector((state) => state.countries);
+  const textFilter = useSelector((state) => state.wordFilter);
 
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
+
+  const filteredCountries = () => {
+    if (textFilter) {
+      return countries.filter((count) =>
+        count.strArea.toLowerCase().includes(textFilter.toLowerCase()),
+      );
+    }
+    return countries;
+  };
 
   const renderCountries = () => {
     if (loading) {
@@ -25,7 +36,7 @@ const Countries = () => {
     }
     if (error) return <h1>Error.</h1>;
 
-    return countries.map((country) => (
+    return filteredCountries().map((country) => (
       <Box key={Math.random()}>
         <Link to={`/countries/a=${country.strArea}`}>
           <Card
