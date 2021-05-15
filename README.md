@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Mounsters Hunter
+# MFOOD PEEKER
 
 > This is a web application where the user will be able to find different recipes of food around the world. The user can select by country or category. Besides, The user can filter the meal based on the name.
 
@@ -12,7 +12,7 @@
 
 ## :red_circle: video Exaplanation:
 
-[ghGisth](ttps://gist.github.com/kcotrinam/df1119250cf42f10b5046e08dc841dac)
+[Github Gist](https://gist.github.com/kcotrinam/df1119250cf42f10b5046e08dc841dac/)
 
 ## :hammer: Built with
 
