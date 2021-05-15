@@ -37,7 +37,7 @@ const Categories = () => {
     if (error) return <h1>Error.</h1>;
 
     return filteredCategories().map((category) => (
-      <Box key={category.idCategory} borderRadius="md">
+      <Box key={Math.random()} borderRadius="md">
         <Link
           to={`/categories/c=${category.strCategory}`}
           name={category.strCategory}
@@ -47,6 +47,7 @@ const Categories = () => {
             name={category.strCategory}
             img={category.strCategoryThumb}
             imgAlt={category.strCategoryDescription}
+            loading={loading}
           />
         </Link>
       </Box>
