@@ -2,7 +2,7 @@
 
 # Mounsters Hunter
 
-> This is an RPG medieval game where the user is capable to move around the map and find a mounster randomly. The user will have 2 turns using a warrior and a wizard, and the user will have to fight until the mounsters or the Heroes die.
+> This is an web application where the user will be able to find different recipes of food around the world. The use can select by countries or categories. Besides, The use can filter the meal based on the name.
 
 ![screenshot](./docs/screenshot.png)
 
