@@ -24,6 +24,7 @@ const MealList = () => {
         image={meal.strMealThumb}
         name={meal.strMeal}
         id={meal.idMeal}
+        loading={loading}
       />
     ));
   };
@@ -31,7 +32,11 @@ const MealList = () => {
   return (
     <Box width={{ md: '80vw' }} mx="auto">
       <Grid
-        templateColumns={{ base: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(4,1fr)' }}
+        templateColumns={{
+          base: '1fr 1fr',
+          md: 'repeat(3, 1fr)',
+          lg: 'repeat(4,1fr)',
+        }}
         gap={3}
       >
         {renderMeals()}

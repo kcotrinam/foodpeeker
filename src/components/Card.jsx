@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Image, ScaleFade, Text } from '@chakra-ui/react';
 
 const Card = ({ name, img, imgAlt, loading }) => (
-  <ScaleFade initialScale={0.9 + 1.1} in={!loading}>
+  <ScaleFade initialScale={0.9} in={!loading}>
     <Box w="100%" position="relative" bg="#fff" boxShadow="xl">
       <Box>
         <Image src={img} alt={imgAlt} w="100%" />
