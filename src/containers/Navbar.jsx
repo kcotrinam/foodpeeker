@@ -1,5 +1,13 @@
 /* eslint-disable */
-import { Box, Flex, Grid, Menu, MenuItem, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Flex,
+  Grid,
+  Menu,
+  MenuItem,
+  Text,
+} from '@chakra-ui/react';
 import { BrowserRouter, Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => (
@@ -8,13 +16,15 @@ const Navbar = () => (
       <Box p={2}>
         <BrowserRouter>
           <Link to="/">
-            <Text
-              fontSize={{ base: '2xl', md: '5xl' }}
-              fontWeight="bold"
-              color="gray.300"
-            >
-              FOODKEEPER
-            </Text>
+            <Center>
+              <Text
+                fontSize={{ base: '2xl', md: '5xl' }}
+                fontWeight="bold"
+                color="gray.300"
+              >
+                FOODKEEPER
+              </Text>
+            </Center>
           </Link>
         </BrowserRouter>
       </Box>
