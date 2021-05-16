@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Navbar from '../containers/Navbar';
+import Navbar from '../components/Navbar';
 
 describe('<Navbar />', () => {
   let component;
@@ -12,7 +12,7 @@ describe('<Navbar />', () => {
   });
 
   test('It should render', () => {
-    component.getByText('FOODKEEPER');
+    component.getByText('FOODPEEKER');
   });
 
   test('There should be a Home button', () => {
